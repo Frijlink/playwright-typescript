@@ -1,0 +1,18 @@
+{
+    "name": "playwright-poc",
+    "version": "1.0.0",
+    "description": " Playwright Proof of Concept, Create Trello board through UI and API",
+    "main": "index.js",
+    "scripts": {
+      "test": "npx playwright test",
+      "test:grep": "npx playwright test --grep"
+    },
+    "author": "Hein-Carl Frijlink",
+    "license": "ISC",
+    "dependencies": {
+      "@faker-js/faker": "7.6.0",
+      "@playwright/test": "1.28.1",
+      "playwright": "1.28.1",
+      "dotenv": "16.0.3"
+    }
+  }
