@@ -10,7 +10,7 @@ export default class WorkspaceNavComponent {
 
     constructor(page: Page) {
         this.page = page
-        this.nav = this.page.locator('nav[data-test-id="workspace-navigation-nav"]')
+        this.nav = this.page.locator('nav[data-testid="workspace-navigation-nav"]')
         this.currentBoard = this.page.locator('[aria-label$="(currently active)"]')
         this.boardActionsMenuBtn = this.page.locator('[aria-label="Board actions menu"]')
         this.closeBoardBtn = this.page.locator('[aria-label="Close board"]')

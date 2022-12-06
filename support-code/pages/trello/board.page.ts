@@ -15,10 +15,10 @@ export default class BoardPage {
         this.mainTitle = this.page.locator('.board-header h1')
         this.boardNameInput = this.page.locator('.board-name-input')
         this.board = this.page.locator('#board')
-        this.leftMenu = this.page.locator('[data-test-id="workspace-boards-and-views-lists"]')
-        this.closeBoardMessage = this.page.locator('[data-test-id="close-board-big-message"]')
-        this.deleteBoardBtn = this.page.locator('[data-test-id="close-board-delete-board-button"]')
-        this.deleteBoardConfirmBtn = this.page.locator('[data-test-id="close-board-delete-board-confirm-button"]')
+        this.leftMenu = this.page.locator('[data-testid="workspace-boards-and-views-lists"]')
+        this.closeBoardMessage = this.page.locator('[data-testid="close-board-big-message"]')
+        this.deleteBoardBtn = this.page.locator('[data-testid="close-board-delete-board-button"]')
+        this.deleteBoardConfirmBtn = this.page.locator('[data-testid="close-board-delete-board-confirm-button"]')
     }
 
     async getMainTitle(): Promise<Locator> {
