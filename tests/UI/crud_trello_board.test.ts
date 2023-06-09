@@ -9,15 +9,15 @@ test.beforeEach(async ({trello}) => {
         process.env.USER_NAME,
         process.env.PASSWORD
     )
-    await expect(await trello.homePage.getSectionHeader()).toContainText('YOUR WORKSPACES')
+    await expect(await trello.homePage.getSectionHeader()).toContainText('YOUR WORKSPACES', { timeout: 30000 })
 })
 
-test('CRUD Trello board', async ({trello}) => {
+test('CRUD Trello board through UI', async ({trello}) => {
     const boardName = TestDataGenerator.generateBoardName()
     const updatedBoardName = TestDataGenerator.generateBoardName()
 
     await test.step('create board', async () => {
-        await trello.homePage.createNewBoard(boardName, 'Purple')
+        await trello.homePage.createNewBoard(boardName, '🌈')
         await trello.boardPage.waitForPageLoaded()
         await trello.workSpaceNav.waitForNav()
 
