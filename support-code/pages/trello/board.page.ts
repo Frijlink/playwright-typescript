@@ -13,7 +13,7 @@ export default class BoardPage {
     constructor(page: Page) {
         this.page = page
         this.mainTitle = this.page.locator('.board-header h1')
-        this.boardNameInput = this.page.locator('.board-name-input')
+        this.boardNameInput = this.page.locator('[data-testid="board-name-input"]')
         this.board = this.page.locator('#board')
         this.leftMenu = this.page.locator('[data-testid="workspace-boards-and-views-lists"]')
         this.closeBoardMessage = this.page.locator('[data-testid="close-board-big-message"]')

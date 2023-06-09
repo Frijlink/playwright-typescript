@@ -11,7 +11,7 @@ export default class HeaderComponent {
         this.page = page
         this.logInBtn = this.page.locator('a[class^="Buttonsstyles"][href="/login"]')
         this.memberInfoBtn = this.page.locator('[data-testid="header-member-menu-button"]')
-        this.memberInfoLogoutBtn = this.page.locator('[data-testid="header-member-menu-logout"]')
+        this.memberInfoLogoutBtn = this.page.locator('[data-testid="account-menu-logout"]')
         this.logoutSubmitBtn = this.page.locator('button#logout-submit')
     }
 
