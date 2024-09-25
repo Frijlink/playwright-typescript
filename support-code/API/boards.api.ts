@@ -26,7 +26,7 @@ export default class BoardsApi {
                     name,
                     key: apiKey,
                     token: apiToken,
-                    prefs_background:  colour,
+                    prefs_background: colour,
                     prefs_permissionLevel: visibility,
                 }
             }
