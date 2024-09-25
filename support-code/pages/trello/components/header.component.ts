@@ -11,10 +11,10 @@ export default class HeaderComponent {
     constructor(page: Page) {
         this.page = page
         this.logInBtn = this.page.locator('header a[class^="Buttonsstyles__Button"][href^="https://id.atlassian.com/login?application=trello"]')
-        this.memberInfoBtn = this.page.locator('[data-testid="header-member-menu-button"]')
-        this.memberInfoLogoutBtn = this.page.locator('[data-testid="account-menu-logout"]')
+        this.memberInfoBtn = this.page.getByTestId('header-member-menu-button')
+        this.memberInfoLogoutBtn = this.page.getByTestId('account-menu-logout')
         this.logoutSubmitBtn = this.page.locator('button#logout-submit')
-        this.trelloBtn = this.page.locator('a[aria-label="Back to home"]')
+        this.trelloBtn = this.page.getByLabel('Back to home')
     }
 
     async getLoginBtn(): Promise<Locator> {
