@@ -15,13 +15,13 @@ export default class HomePage {
     constructor(page: Page) {
         this.page = page
         this.sectionHeader = this.page.locator('h3.boards-page-section-header-name')
-        this.newBoardBtn = this.page.locator('[data-testid="create-board-tile"]')
-        this.newBoardNameInput = this.page.locator('[data-testid="create-board-title-input"]')
+        this.newBoardBtn = this.page.getByTestId('create-board-tile')
+        this.newBoardNameInput = this.page.getByTestId('create-board-title-input')
         this.selectVisibilityDropdown = this.page.locator('[id$="create-board-select-visibility"] > div > div > div:nth-child(1)')
         this.visibilityPrivateBtn = this.page.locator('#react-select-4-option-0 li')
         this.visibilityWorkspaceBtn = this.page.locator('#react-select-4-option-1 li')
         this.visibilityPublicBtn = this.page.locator('#react-select-4-option-2 li')
-        this.createNewBoardSubmitBtn = this.page.locator('[data-testid="create-board-submit-button"]')
+        this.createNewBoardSubmitBtn = this.page.getByTestId('create-board-submit-button')
         this.boardTileTitle = this.page.locator('.board-tile-details-name')
     }
 

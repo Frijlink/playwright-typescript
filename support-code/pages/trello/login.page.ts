@@ -8,8 +8,8 @@ export default class LoginPage {
 
     constructor(page: Page) {
         this.page = page
-        this.userInput = this.page.locator('input#username')
-        this.passwordInput = this.page.locator('input#password')
+        this.userInput = this.page.getByTestId('username')
+        this.passwordInput = this.page.getByTestId('password')
         this.loginSubmitBtn = this.page.locator('button#login-submit')
     }
 

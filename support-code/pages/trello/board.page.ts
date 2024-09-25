@@ -6,6 +6,7 @@ export default class BoardPage {
     private boardNameInput: Locator;
     private board: Locator;
     private leftMenu: Locator;
+    private boardMenu: Locator;
     private closeBoardMessage: Locator;
     private deleteBoardBtn: Locator;
     private deleteBoardConfirmBtn: Locator;
@@ -13,12 +14,13 @@ export default class BoardPage {
     constructor(page: Page) {
         this.page = page
         this.mainTitle = this.page.locator('.board-header h1')
-        this.boardNameInput = this.page.locator('[data-testid="board-name-input"]')
+        this.boardNameInput = this.page.getByTestId('board-name-input')
         this.board = this.page.locator('#board')
-        this.leftMenu = this.page.locator('[data-testid="workspace-boards-and-views-lists"]')
-        this.closeBoardMessage = this.page.locator('[data-testid="close-board-big-message"]')
-        this.deleteBoardBtn = this.page.locator('[data-testid="close-board-delete-board-button"]')
-        this.deleteBoardConfirmBtn = this.page.locator('[data-testid="close-board-delete-board-confirm-button"]')
+        this.leftMenu = this.page.getByTestId('workspace-boards-and-views-lists')
+        this.boardMenu = this.page.getByLabel('Show menu')
+        this.closeBoardMessage = this.page.locator('#content-wrapper p')
+        this.deleteBoardBtn = this.page.getByTestId('close-board-delete-board-button')
+        this.deleteBoardConfirmBtn = this.page.getByTestId('close-board-delete-board-confirm-button')
     }
 
     async getMainTitle(): Promise<Locator> {
@@ -42,6 +44,7 @@ export default class BoardPage {
     }
 
     async deleteBoard(): Promise<void> {
+        await this.boardMenu.click()
         await this.deleteBoardBtn.click()
         await this.deleteBoardConfirmBtn.click()
     }

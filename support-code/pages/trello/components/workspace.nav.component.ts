@@ -10,11 +10,11 @@ export default class WorkspaceNavComponent {
 
     constructor(page: Page) {
         this.page = page
-        this.nav = this.page.locator('nav[data-testid="workspace-navigation-nav"]')
-        this.currentBoard = this.page.locator('[aria-label$="(currently active)"]')
-        this.boardActionsMenuBtn = this.page.locator('[aria-label="Board actions menu"]')
-        this.closeBoardBtn = this.page.locator('[aria-label="Close board"]')
-        this.closeBtn = this.page.locator('[title="Close"]')
+        this.nav = this.page.getByTestId('workspace-navigation-nav')
+        this.currentBoard = this.page.getByLabel('(currently active)')
+        this.boardActionsMenuBtn = this.page.getByLabel('Board actions menu')
+        this.closeBoardBtn = this.page.getByLabel('Close board')
+        this.closeBtn = this.page.getByTestId('popover-close-board-confirm')
     }
 
     async waitForNav(): Promise<void> {
